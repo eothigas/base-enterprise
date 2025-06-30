@@ -198,3 +198,15 @@
         left: 30px;
     }
 }
+
+@media (max-width: 1024px) {
+    #banner {
+        margin-top: 140px;
+    }
+}
+
+@media (min-width: 991px) {
+    #banner {
+        margin-top: 150px;
+    }
+}

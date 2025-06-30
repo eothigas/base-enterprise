@@ -32,7 +32,7 @@ main {
 }
 
 .header-background {
-    position: sticky;
+    position: fixed;
     top: 20px;
     z-index: 1;
     width: 100%;
