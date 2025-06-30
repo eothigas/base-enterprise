@@ -1,0 +1,47 @@
+main {
+    position: relative;
+}
+
+.whatsapp-link {
+    position: fixed;
+    bottom: 20px;
+    right: 25px;
+}
+
+.whatsapp-link img {
+    width: 70px;
+    animation: pulseZap 2s infinite ease-in-out;
+    border-radius: 50%;
+}
+
+.whatsapp-link a {
+    opacity: 1 !important;
+}
+
+@keyframes pulseZap {
+    0% {
+        -webkit-box-shadow: 0 0 0 0 rgb(37 211 102 / 70%), 0 0 0 0 rgb(37 211 102 / 70%);
+        box-shadow: 0 0 0 0 rgb(37 211 102 / 70%), 0 0 0 0 rgb(37 211 102 / 70%);
+    }
+    40% {
+        -webkit-box-shadow: 0 0 0 0 rgb(37 211 102 / 0%), 0 0 0 0 rgb(37 211 102 / 70%);
+        box-shadow: 0 0 0 0 rgb(37 211 102 / 0%), 0 0 0 0 rgb(37 211 102 / 70%);
+    }
+    80% {
+        -webkit-box-shadow: 0 0 0 0 rgb(37 211 102 / 0%), 0 0 0 30px rgb(37 211 102 / 0%);
+        box-shadow: 0 0 0 0 rgb(37 211 102 / 0%), 0 0 0 30px rgb(37 211 102 / 0%);
+    }
+    100% {
+        -webkit-box-shadow: 0 0 0 0 rgb(37 211 102 / 0%), 0 0 0 30px rgb(37 211 102 / 0%);
+        box-shadow: 0 0 0 0 rgb(37 211 102 / 0%), 0 0 0 30px rgb(37 211 102 / 0%);
+    }
+}
+
+@media screen and (max-width: 641px) {
+    .whatsapp-link {
+        right: 5px;
+    }
+    .whatsapp-link img { 
+        width: 60px;
+    }
+}

@@ -8,11 +8,10 @@
     <div class="col-md-4 flex justify-content-end">
       <nav>
         <ul class="menu-list">
-          <li><a href="<?php echo $url; ?>">Home</a></li>
-          <li><a href="#">Sobre</a></li>
-          <li><a href="#">Projetos</a></li>
-          <li><a href="#">Resumo</a></li>
-          <li><a href="#">Contato</a></li>
+          <li><a href="<?php echo $url; ?>" title="Página Inicial">Home</a></li>
+          <li><a href="<?php echo $url;?>#presentation" title="Sobre">Sobre</a></li>
+          <li><a href="<?php echo $url;?>#services" title="Serviços">Serviços</a></li>
+          <li><a href="<?php echo $url;?>#contato" title="Contato">Contato</a></li>
         </ul>
       </nav>
     </div>

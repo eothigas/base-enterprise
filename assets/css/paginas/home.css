@@ -1,98 +1,200 @@
 #banner {
-    color: var(--white);
-    padding: 45px 0;
+    background-color: var(--dark-white) !important;
+    height: 500px;
+    padding-top: 20px;
+    border-radius: 90px;
+    position: relative;
+    z-index: 1;
 }
 
-#banner .presentation {
-    text-align: start;
+#banner img {
+    max-height: 400px;
+    border-radius: 10px;
+    transition: all .5s ease-in-out;
+}
+
+
+#banner img:hover {
+    box-shadow: 0px 10px 10px var(--secondary);
+    transform: translateY(-3px);
 }
 
 #banner span {
     color: var(--secondary);
-    text-transform: capitalize;
+    font-weight: bold;
 }
 
-#banner a {
-    display: inline-flex;
-    padding: 10px 15px;
-    border: 2px solid var(--secondary);
-    color: var(--white);
-    border-radius: 8px;
-    transition: all .5s ease-in-out;
+#banner .buttons {
+    display: flex;
+    gap: 10px;
+}
+
+#banner .buttons a {
+    border: 2px solid var(--main);
+    padding: 5px 10px;
+    border-radius: 6px;
     font-weight: 600;
-    text-transform: uppercase;
 }
 
-#banner a:hover {
-    background-color: var(--secondary);
-    color: var(--main-strong);
-    box-shadow: 0px 0px 5px 3px var(--secondary);
-}
-
-#banner img {
-    margin-top: 30px;
-    animation: flutuar 3s ease-in-out infinite;
-    width: 100%;
-    height: auto;
-}
-
-/* @media screen and (max-width: 641px) {
-    #banner img {
-        display: none;
-    }
-} */
-
-@keyframes flutuar {
-    0% {
-        transform: translateY(0);
-    }
-    50% {
-        transform: translateY(-10px);
-    }
-    100% {
-        transform: translateY(0);
-    }
-}
-
-/* Seção Sobre */
-
-#sobre {
-    padding: 45px 0;
+#banner .buttons a:hover {
+    background-color: var(--main);
     color: var(--white);
-    min-height: 400px;
 }
 
-#sobre h2 {
-    font-size: 20px;
-    font-weight: 500;
-    text-transform: uppercase;
+/* Numeros */
+
+#numbers {
+    background-color: black;
+    color: var(--white);
+    padding: 128px 0 45px;
+    text-align: center;
+    margin-top: -84px;
 }
 
-#sobre h4 {
-    font-size: 35px;
+#numbers span {
+    color: var(--secondary);
+    font-weight: 700;
 }
 
-
-.image-container {
-  width: 300px;  /* largura igual à imagem */
-  height: 300px;
-  overflow: hidden;
-  position: relative;
+.box-numbers {
+    border: 1px solid rgba(255, 255, 255, 0.4);
+    margin: 20px 45px;
+    border-radius: 20px;
+    padding: 25px 0;
+    background: rgba(0, 0, 0, .2); 
+    /* box-shadow: 0 4px 30px var(--secondary); */
+    backdrop-filter: blur(10px);
+    color: #fff; 
+    position: relative;
+    overflow: hidden;
 }
 
-.image-slider {
-  display: flex;
-  width: 600px; /* 2 imagens de 600px lado a lado */
-  transition: transform 0.5s ease;
+#numbers .bg {
+    position: absolute;
+    fill: var(--secondary) !important;
+    width: 130px;
+    top: 10px;
+    left: -90px; 
+    box-shadow: 0 0 10px var(--secondary);
+    filter: blur(20px);
 }
 
-.image-container:hover .image-slider {
-  transform: translateX(-300px); /* move para esquerda o tamanho de 1 imagem */
+#numbers .bg-dir {
+    position: absolute;
+    fill: var(--secondary) !important;
+    width: 130px;
+    top: 10px;
+    right: -90px; 
+    box-shadow: 0 0 10px var(--secondary);
+    filter: blur(20px);
 }
 
-.image-slider img {
-  width: 300px;
-  height: auto;
-  object-fit: cover;
-  display: block;
+.box-numbers p {
+    margin-bottom: 0;
+}
+
+/* Apresentação */
+
+#presentation {
+    background-color: black;
+    color: var(--white);
+    padding: 45px ;
+}
+
+.img-present {
+    width: 100%;
+    object-fit: cover;
+    object-position: bottom;
+    margin: 0 !important;
+    filter: grayscale(80%);
+    border-radius: 20px;
+    transition: all .3s ease-in-out;
+}
+
+#presentation .box-img {
+    position: relative;
+}
+
+#presentation .text {
+    position: absolute;
+    bottom: 30px;
+    left: 60px;
+    background-color: var(--main-strong);
+    padding: 20px;
+    border-radius: 10px;
+    border: 2px solid var(--third);
+    visibility: hidden;
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out, visibility 0.5s ease-in-out;
+}
+
+#presentation .box-img:hover .text {
+    visibility: visible;
+    opacity: 1;
+}
+
+#presentation .text h4 {
+    font-size: clamp(16px, 3vw, 22px);
+    margin-bottom: 0;
+}
+
+.img-present:hover {
+    box-shadow: 0 0 10px var(--third);
+    filter: grayscale(0%);
+    cursor: pointer;
+}
+
+.var-1 {
+    max-height: 400px;
+    object-position: center;
+}
+
+.var-2 {
+    max-height: 550px;
+}
+
+@media screen and (max-width: 768px ){
+    #banner {
+        min-height: 200px;
+        height: auto;
+        border-radius: 0;
+        padding: 0 0 25px 0;
+    }
+    #banner img {
+        margin: 25px auto;
+    }
+
+    #banner .flex {
+        flex-wrap: wrap-reverse;
+    }
+
+    #banner .banner-content {
+        text-align: center;
+    }
+
+    .buttons {
+        justify-content: center;
+    }
+
+    .box-numbers {
+        gap: 40px;
+        margin-bottom: 0;
+    }
+
+    #numbers {
+        padding-bottom: 0;
+    }
+
+    #numbers .bg, #numbers .bg-dir {
+        height: 100%;
+    }
+
+    .total-box {
+        /* display: flex; */
+        gap: 20px;
+    }
+
+    #presentation .text {
+        left: 30px;
+    }
 }
