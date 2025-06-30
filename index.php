@@ -29,7 +29,7 @@
                             <p>Aqui você pode adicionar, ou trocar esse texto!</p>
                             <p>Fique a vontade.</p>
                             <div class="buttons">
-                                <a href="<?php echo $url;?>#sobre">Saiba Mais</a>
+                                <a href="<?php echo $url;?>#presentation">Saiba Mais</a>
                                 <a href="<?php echo $arrayLocal['link_wpp']; ?>">Entre em Contato</a>
                             </div>
                         </div>

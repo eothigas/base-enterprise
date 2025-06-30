@@ -88,7 +88,7 @@ text-shadow: none;
     transition: all .4s ease-in-out;
 }
 .slicknav_menu {
-    background-color: var(--main-strong)
+    background-color: black
 }
 .slicknav_menu img {
     /* max-height: 80px; */
