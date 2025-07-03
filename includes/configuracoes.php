@@ -3,7 +3,7 @@
 
     // URLs de ambiente
     $local     = "http://localhost/_Base/base-enterprise/";
-    $producao  = "https://www.tfportifolio.com.br/base/base-enterprise/";
+    $producao  = "https://www.aprovacao.tfportifolio.com.br/base-enterprise/";
 
     // Define URL conforme o ambiente
     $url = ($_SERVER['HTTP_HOST'] === 'localhost') ? $local : $producao;
