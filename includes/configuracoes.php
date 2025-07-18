@@ -2,7 +2,7 @@
     session_start();
 
     // URLs de ambiente
-    $local     = "http://localhost/_Pessoal/base-enterprise/";
+    $local     = "http://localhost/_Base/base-enterprise/";
     $producao  = "https://www.aprovacao.tfportifolio.com.br/base-enterprise/";
 
     // Define URL conforme o ambiente
@@ -40,6 +40,7 @@
         'n_phone' => '(xx) xxxxx-xxxx',
         'link_phone' => '+xxxxxxxxxxx',
         'wpp' => '(xx) xxxxx-xxxx',
+        'num_wpp' => '5511929292929',
         'link_wpp' => 'https://wa.me/55?text=Mensagem%20personalizada!',
         'link_maps' => 'https://',
         'iframe_maps' => 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d117134.38445076205!2d-46.54782856356423!3d-23.444244722884537!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94cef53fb1b5e26d%3A0x974ce18d22c3555b!2sGuarulhos%2C%20SP!5e0!3m2!1spt-BR!2sbr!4v1750983453833!5m2!1spt-BR!2sbr',

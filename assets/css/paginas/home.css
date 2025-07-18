@@ -189,10 +189,6 @@ main {
     border-radius: 10px;
 }
 
-.button-service {
-    /* margin: 0 auto; */
-}
-
 .button-service .btns {
     display: flex;
     justify-content: space-evenly;
@@ -289,6 +285,11 @@ main {
     padding-left: 10px;
 }
 
+#service-description span {
+    color: var(--secondary);
+    font-weight: 800;
+}
+
 .link-card {
   display: flex;
   align-items: center;
@@ -336,10 +337,6 @@ main {
   display: grid;
   place-items: center;
   overflow: hidden;
-}
-
-.button:hover {
-    /* background-color: #000; */
 }
 
 .button:hover .button__icon-wrapper {

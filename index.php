@@ -94,63 +94,39 @@
                     <div class="col-lg-4 col-md-4 col-sm-10">
                         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Harum, id!</p>
 
-                        <div class="button-service">
-                            <div class="flex btns active-btn" >
-                                <div class="num">
-                                    <span class="">01</span>
+                        <div class="button-service" id="service-buttons">
+                            <?php include "includes/arrayServices.php"; ?>
+                            <?php foreach ($servicos as $i => $servico): ?>
+                                <div class="flex btns<?= $i === 0 ? ' active-btn' : '' ?>"
+                                    data-title="<?= htmlspecialchars($servico['titulo']); ?>"
+                                    data-img="<?= $url; ?>imagens/main/services/<?= $servico['imagem']; ?>">
+                                    <div class="num">
+                                        <span><?= str_pad($i + 1, 2, '0', STR_PAD_LEFT); ?></span>
+                                    </div>
+                                    <div class="text">
+                                        <h4><?= $servico['titulo']; ?></h4>
+                                    </div>
+                                    <div class="icon">
+                                        <i class="bi bi-arrow-right"></i>
+                                    </div>
                                 </div>
-                                <div class="text">
-                                    <h4>Serviço 1</h4>
-                                </div>
-                                <div class="icon">
-                                    <i class="bi bi-arrow-right"></i>
-                                </div>
-                            </div>
-                            <div class="flex btns">
-                                <div class="num">
-                                    <span class="active">02</span>
-                                </div>
-                                <div class="text">
-                                    <h4>Serviço 2</h4>
-                                </div>
-                                <div class="icon">
-                                    <i class="bi bi-arrow-right"></i>
-                                </div>
-                            </div>
-                            <div class="flex btns">
-                                <div class="num">
-                                    <span class="active">03</span>
-                                </div>
-                                <div class="text">
-                                    <h4>Serviço 3</h4>
-                                </div>
-                                <div class="icon">
-                                    <i class="bi bi-arrow-right"></i>
-                                </div>
-                            </div>
-                            <div class="flex btns">
-                                <div class="num">
-                                    <span class="active">04</span>
-                                </div>
-                                <div class="text">
-                                    <h4>Serviço 4</h4>
-                                </div>
-                                <div class="icon">
-                                    <i class="bi bi-arrow-right"></i>
-                                </div>
-                            </div>
+                            <?php endforeach; ?>
                         </div>
                     </div>
+
                     <div class="col-lg-4 col-md-4 col-sm-10">
-                        <img src="<?php echo $url;?>imagens/main/services/service1.webp" alt="Imagem de Serviços" class="img-responsive service-img">
+                        <img id="service-img" src="<?= $url; ?>imagens/main/services/<?= $servicos[0]['imagem']; ?>" alt="Imagem de Serviços" class="img-responsive service-img">
                     </div>
+
                     <div class="col-lg-3 col-md-3 col-sm-10">
                         <div class="flex align-items-center justify-content-center flex-column gap-3">
                             <div class="col-lg-12 col-md-12 col-sm-12">
-                               <div class="card-service">
-                                    <h4>Quer saber como nosso serviço funciona?</h4>
+                                <div class="card-service">
+                                    <h4 id="service-description">Quer saber como nosso serviço de <span> <?= $servicos[0]['titulo']; ?> </span> funciona?</h4>
                                     <div class="flex link-card justify-content-start">
-                                        <a href="#" class="button">
+                                        <a id="whatsapp-btn"
+                                            href="https://wa.me/<?php echo $arrayLocal['num_wpp']; ?>?text=<?= urlencode("Olá! Vim pelo site, e gostaria de mais informações sobre os serviços de: " . $servicos[0]['titulo']); ?>"
+                                            class="button" target="_blank">
                                             Saiba Mais
                                             <span class="button__icon-wrapper">
                                                 <svg
@@ -179,16 +155,17 @@
                                                 ></path>
                                                 </svg>
                                             </span>
-                                            
                                         </a>
                                     </div>
                                 </div>
                             </div>
+
+                            <!-- Card 2 (fixo) -->
                             <div class="col-lg-12">
                                 <div class="card-service-alt">
                                     <h4>Procurando serviço de qualidade?</h4>
                                     <div class="flex link-card justify-content-start">
-                                        <a href="#" class="button">
+                                        <a href="https://wa.me/<?php echo $arrayLocal['num_wpp']; ?>?text=<?= urlencode("Olá! Vim pelo site, e gostaria de mais informações sobre os serviços oferecidos!") ?>" class="button">
                                             Contate-nos
                                             <span class="button__icon-wrapper">
                                                 <svg
@@ -217,11 +194,9 @@
                                                 ></path>
                                                 </svg>
                                             </span>
-                                            
                                         </a>
                                     </div>
                                 </div>
-                                
                             </div>
                         </div>
                     </div>
@@ -239,5 +214,39 @@
     
     <?php include "includes/_footer.php"; ?>
 
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const btns = document.querySelectorAll(".btns");
+            const whatsappBtn = document.getElementById("whatsapp-btn");
+            const serviceImg = document.getElementById("service-img");
+            const serviceDesc = document.getElementById("service-description");
+
+            // Usando json_encode para passar string segura para JS
+            const numero = <?php echo json_encode($arrayLocal['num_wpp']); ?>;
+
+            btns.forEach(btn => {
+                btn.addEventListener("click", () => {
+                    // Remove classe ativa atual
+                    document.querySelector(".btns.active-btn")?.classList.remove("active-btn");
+                    btn.classList.add("active-btn");
+
+                    // Dados do botão
+                    const titulo = btn.getAttribute("data-title");
+                    const imagem = btn.getAttribute("data-img");
+
+                    // Atualiza imagem
+                    serviceImg.setAttribute("src", imagem);
+
+                    // Atualiza link do WhatsApp
+                    const mensagem = `Olá! Vim pelo site, e gostaria de mais informações sobre os serviços de: ${titulo}`;
+                    const url = `https://wa.me/${numero}?text=${encodeURIComponent(mensagem)}`;
+                    whatsappBtn.setAttribute("href", url);
+
+                    // Atualiza texto do título
+                    serviceDesc.innerHTML = `Quer saber como nosso serviço de <span>${titulo}</span> funciona?`;
+                });
+            });
+        });
+    </script>
 </body>
 </html>
