@@ -52,7 +52,7 @@
 
 <div class="container-fluid author">
     <div class="flex text-center">
-        <h2>Desenvolvido por <a href="www.tfportifolio.com.br" title="TF Portifólio - Webdesigner">Thiago Freitas &copy;</a> - <?php echo date("Y") ;?> </h2>
+        <h2>&copy; Desenvolvido por <a href="https://www.tfportifolio.com.br" title="TF Portifólio - Webdesigner" target="_blank">Thiago Freitas</a> - <?php echo date("Y") ;?> </h2>
     </div>
 </div>
 

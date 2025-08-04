@@ -16,7 +16,7 @@ a,
 a:hover {
     color: var(--white);
     text-decoration: none !important;
-    transition: all .5s ease-in-out;
+    transition: all .3s ease-in-out;
 }
 
 body {
@@ -115,6 +115,7 @@ footer {
   background-color: var(--main);
   padding: 45px 0;
   color: var(--white);
+  border-top: 2px solid var(--secondary);
 }
 
 footer img {
@@ -137,10 +138,16 @@ footer ul li {
   display: flex;
   align-items: center;
   gap: 10px;
+  transition: all .3s ease-in-out;
+}
+
+footer ul li:hover,
+footer ul li a:hover {
+  color: var(--secondary);
 }
 
 .author {
-  padding: 10px 0 ; 
+  padding: 15px 0; 
   background-color: black;
   color: var(--white);
 }
@@ -151,7 +158,10 @@ footer ul li {
 }
 
 .author a {
-  color: #76abae;
+  background-color: var(--secondary);
+  font-weight: 700;
+  padding: 3px 8px;
+  border-radius: 4px;
 } 
 
 /* Slick_Nav */

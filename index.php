@@ -204,9 +204,50 @@
                 <img src="<?php echo $url;?>imagens/main/services/square-number.svg" alt="img fundo serviço" class="img-responsive bg-service-alt">
             </div>
         </section>
-        <section id="team">
+        <section id="contato">
             <div class="container">
-                <h2>seção time</h2>
+                <img src="<?php echo $url;?>imagens/main/services/square-number.svg" alt="img fundo serviço" class="img-responsive bg-service">
+                <div class="flex" style="align-items: start;">
+                    <!-- Formulário de contato -->
+                    <div class="col-lg-6 col-md-12 col-sm-12 col-12 left-contato px-3">
+                        <h2 class="mb-4">Entre em Contato</h2>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorum quisquam accusantium, ipsam fugit aut culpa placeat. Necessitatibus laboriosam iste labore ab sit officia repellat? Obcaecati.</p>
+                        <form>
+                            <div class="mb-2 input-group">
+                                <label for="nome" class="form-label">Nome</label>
+                                <input type="text" class="form-controls" id="nome" placeholder="Seu nome" required>
+                            </div>
+                            <div class="mb-2 input-group">
+                                <label for="email" class="form-label">E-mail</label>
+                                <input type="email" class="form-controls" id="email" placeholder="Seu e-mail" required>
+                            </div>
+                            <div class="mb-2 input-group">
+                                <label for="mensagem" class="form-label">Mensagem</label>
+                                <textarea class="form-controls" id="mensagem" rows="4" placeholder="Sua mensagem" required></textarea>
+                            </div>
+                            <button type="submit" class="btn-contact">Enviar</button>
+                        </form>
+                    </div>
+
+                    <div class="col-lg-5 col-md-12 col-sm-12 col-12 flexColumn right-contato px-3">
+                        <h2  class="mb-4">Nossa Localização</h2>
+
+                        <ul>
+                            <li><i class="bi bi-geo-alt-fill"></i><a href="<?php echo $arrayLocal['link_maps']; ?>" title="Localização - <?php echo $nome_site; ?>"><?php echo $arrayLocal['rua'] . ", " . $arrayLocal['bairro'] . " - " . $arrayLocal['cidade'] . " - " . $arrayLocal['uf']?> </a></li>
+                            <li><i class="bi bi-telephone-fill"></i><a href="tel:<?php echo $arrayLocal['link_phone']; ?>" title="Contate-nos"><?php echo $arrayLocal['n_phone']?></a></li>
+                            <li><i class="bi bi-whatsapp"></i><a href="<?php echo $arrayLocal['link_wpp']; ?>"><?php echo $arrayLocal['wpp']?></a></li>
+                            <li><i class="bi bi-envelope-fill"></i><a href="mailto:<?php echo $emailContato; ?>"><?php echo $emailContato; ?></a></li>
+                        </ul>
+                        <iframe 
+                            src="<?php echo $arrayLocal['iframe_maps']; ?>" 
+                            allowfullscreen="" 
+                            loading="lazy"
+                            referrerpolicy="no-referrer-when-downgrade"
+                            title="Localização - <?php echo $nome_site; ?>"
+                        ></iframe>
+                    </div>
+                </div>
+                <img src="<?php echo $url;?>imagens/main/services/square-number.svg" alt="img fundo serviço" class="img-responsive bg-service-alt">
             </div>
         </section>
     </main>

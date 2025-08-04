@@ -2,7 +2,7 @@
     session_start();
 
     // URLs de ambiente
-    $local     = "http://localhost/_Base/base-enterprise/";
+    $local     = "http://localhost/_Pessoal/base-enterprise/";
     $producao  = "https://www.aprovacao.tfportifolio.com.br/base-enterprise/";
 
     // Define URL conforme o ambiente
