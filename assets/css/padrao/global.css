@@ -12,6 +12,11 @@
     --font: 'Montserrat', sans-serif;
 }
 
+html {
+    scroll-padding-top: 150px; /* ajuste conforme a altura do seu header */
+}
+
+
 a, 
 a:hover {
     color: var(--white);
@@ -31,6 +36,10 @@ main {
   z-index: 0;
 }
 
+section {
+    scroll-behavior: smooth;
+}
+
 .header-background {
     position: fixed;
     top: 20px;
@@ -40,7 +49,7 @@ main {
 }
 
 .header {
-  width: 90%;
+  width: 100%;
   margin: 0 auto;
   background-color: transparent;
   color: var(--white);
@@ -113,7 +122,7 @@ header img {
 
 footer {
   background-color: var(--main);
-  padding: 45px 0;
+  padding: 45px 0 0;
   color: var(--white);
   border-top: 2px solid var(--secondary);
 }
@@ -148,7 +157,6 @@ footer ul li a:hover {
 
 .author {
   padding: 15px 0; 
-  background-color: black;
   color: var(--white);
 }
 

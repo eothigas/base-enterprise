@@ -46,15 +46,14 @@
 
         </div>
     </div>
+    <div class="container-fluid author">
+        <div class="flex text-center">
+            <h2>&copy; Desenvolvido por <a href="https://www.tfportifolio.com.br" title="TF Portifólio - Webdesigner" target="_blank">Thiago Freitas</a> - <?php echo date("Y") ;?> </h2>
+        </div>
+    </div>
 </footer>
 
 <?php include "includes/zap-button.php"; ?>
-
-<div class="container-fluid author">
-    <div class="flex text-center">
-        <h2>&copy; Desenvolvido por <a href="https://www.tfportifolio.com.br" title="TF Portifólio - Webdesigner" target="_blank">Thiago Freitas</a> - <?php echo date("Y") ;?> </h2>
-    </div>
-</div>
 
 <?php if($_SERVER["SERVER_NAME"] != "localhost"){ ?>
     <!-- Código do Analytics aqui! -->
